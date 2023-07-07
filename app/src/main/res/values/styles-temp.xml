@@ -1,0 +1,311 @@
+<!--
+공통 Style
+Material Theme 설정 가이드
+https://material.io/components?platform=android
+텍스트뷰 LineHeight 참고
+https://velog.io/@tura/typography-sync
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 앱 전체 테마 설정 -->
+    <style name="Theme.ASDF" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- 배경 색상 -->
+        <item name="android:windowBackground">@color/window_background</item>
+
+        <!-- ToolBar 색상 -->
+        <item name="android:colorPrimary">@color/color_primary</item>
+        <item name="colorPrimary">@color/color_primary</item>
+
+        <!-- ToolBar 텍스트 색상 -->
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="android:textColorPrimary">@color/color_on_primary</item>
+
+        <!-- Ripple 이펙트 색상 -->
+        <item name="colorControlHighlight">@color/ripple_color</item>
+
+        <!-- 기본 텍스트 색상 -->
+        <item name="android:textColor">@color/text_color</item>
+
+        <!-- 프로그레스바 색상 -->
+        <item name="colorAccent">@color/color_primary</item>
+
+        <!-- StatusBar 색상 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- AppCompat 버튼 스타일 -->
+        <item name="buttonStyle">@style/Widget.ASDF.Button</item>
+        <item name="borderlessButtonStyle">@style/Widget.ASDF.Button.Borderless</item>
+        <item name="android:buttonStyle">@style/Widget.ASDF.Button</item>
+
+        <!-- MaterialTextInputLayout Style 스타일 -->
+        <item name="textInputStyle">@style/Widget.ASDF.TextInputLayout</item>
+
+        <!-- DialogFragment -->
+        <item name="android:dialogTheme">@style/Theme.ASDF.Dialog</item>
+
+        <!-- ToolBar 좌상단 네비게이션 버튼 스타일 -->
+        <item name="toolbarNavigationButtonStyle">@style/Widget.ASDF.Toolbar.NavigationButton</item>
+
+        <!-- ImageView 이미지가 뷰사이즈에 딱 맞게 노출되도록 설정 -->
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ASDF.MaterialAlertDialog</item>
+        <item name="toolbarStyle">@style/Widget.ASDF.Toolbar</item>
+        <item name="materialButtonStyle">@style/Widget.ASDF.MaterialButton</item>
+        <item name="imageButtonStyle">@style/Widget.ASDF.ImageButton</item>
+        <item name="android:imageButtonStyle">@style/Widget.ASDF.ImageButton</item>
+        <item name="materialSwitchStyle">@style/Widget.ASDF.MaterialSwitch</item>
+
+        <!-- elevation 그림자를 진하게 설정 -->
+        <item name="android:ambientShadowAlpha">1</item>
+        <item name="android:spotShadowAlpha">1</item>
+    </style>
+
+    <!-- 스플래시 화면 설정 -->
+    <style name="Theme.ASDF.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/window_background</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.ASDF</item>
+    </style>
+
+    <!-- DialogFragment 기본 스타일 -->
+    <style name="Theme.ASDF.Dialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- 버튼 스타일 -->
+    <style name="Widget.ASDF.Button" parent="@style/Widget.AppCompat.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:background">@drawable/bt_blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.08</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <!-- 배경없는 버튼 -->
+    <style name="Widget.ASDF.Button.Borderless" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:minHeight">56dp</item>
+        <item name="colorControlHighlight">@color/ripple_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="Widget.ASDF.ImageButton" parent="@style/Widget.ASDF.Button">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="Widget.ASDF.MaterialButton" parent="">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/bt_blue</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.08</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">18dp</item>
+        <item name="iconPadding">7dp</item>
+        <item name="iconTint">@color/color_on_accent_disable</item>
+    </style>
+
+    <style name="Widget.ASDF.MaterialButton.Gradation">
+        <item name="android:background">@drawable/bt_blue_gradation</item>
+    </style>
+
+    <style name="Widget.ASDF.MaterialButton.Border">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/bt_blue_border</item>
+        <item name="android:textColor">@color/button_border_text</item>
+        <item name="iconTint">@color/color_accent_disable</item>
+    </style>
+
+    <!--
+    TextInputLayout Style
+    https://medium.com/omisoft/textinputlayout-styling-8b36a5e0d73c
+    -->
+    <style name="Widget.ASDF.TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- 테두리 색상 -->
+        <item name="boxStrokeColor">@color/color_primary</item>
+
+        <!-- Focused 힌트 텍스트 컬러 -->
+        <item name="hintTextColor">@color/text_color_hint</item>
+
+        <item name="materialThemeOverlay">@style/ThemeOverlay.ASDF.TextInputLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.ASDF.TextInputLayout" parent="@style/ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <!-- 텍스트 컬러 -->
+        <item name="android:textColorPrimary">@color/edit_text_color</item>
+
+        <!-- 커서 색상 -->
+        <item name="colorPrimary">@color/edit_text_color</item>
+
+        <!-- Unfocused 힌트 텍스트 컬러 -->
+        <item name="colorOnSurface">@color/text_color_hint</item>
+
+        <!-- Error 팝업 텍스트 컬러 -->
+        <item name="android:textColorPrimaryInverse">@color/edit_text_color</item>
+    </style>
+
+    <!-- 툴바 스타일 -->
+    <style name="Widget.ASDF.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleCentered">true</item>
+        <item name="android:minHeight">46dp</item>
+        <item name="maxButtonHeight">46dp</item>
+        <item name="android:paddingStart">11dp</item>
+        <item name="android:paddingEnd">11dp</item>
+        <item name="titleTextAppearance">@style/TextAppearance.ASDF.Toolbar.Title</item>
+    </style>
+
+    <!--  툴바 좌상단 NavigationButton 스타일 -->
+    <!--  참고 : 아이콘은 BindingAdapter에서 설정됨  -->
+    <style name="Widget.ASDF.Toolbar.NavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:padding">11dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <!--  툴바 내 AppCompatImageButton 스타일 -->
+    <style name="Widget.ASDF.Toolbar.ImageButton" parent="">
+        <item name="android:layout_width">46dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:layout_gravity">center_vertical|end</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="TextAppearance.ASDF.Toolbar.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/white90</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+    <!-- 툴바 스타일 -->
+
+    <style name="ThemeOverlay.ASDF.MaterialAlertDialog" parent="@style/Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="buttonBarButtonStyle">@style/ThemeOverlay.ASDF.MaterialAlertDialog.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/ThemeOverlay.ASDF.MaterialAlertDialog.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ThemeOverlay.ASDF.MaterialAlertDialog.Button</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ThemeOverlay.ASDF.MaterialAlertDialog.Button</item>
+    </style>
+
+    <style name="ThemeOverlay.ASDF.MaterialAlertDialog.Button" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item>
+        <item name="rippleColor">?attr/colorControlHighlight</item>
+    </style>
+
+    <!--
+    MaterialTheme을 사용하는 경우 Button Background를 변경할 수 없음
+    아래외 같은 style을 AppCompatButton에 적용 필요
+    -->
+    <style name="Widget.ASDF.Button.Borderless.White" parent="Widget.ASDF.Button.Borderless">
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:background">@drawable/bt_white</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <style name="Widget.ASDF.Button.Gray" parent="Widget.ASDF.Button">
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="backgroundTint">@color/gray</item>
+    </style>
+
+    <style name="Widget.ASDF.ProgressBar.White" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.ASDF.ProgressBar.White" parent="">
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <!-- 인디케이터 스타일 -->
+    <style name="Widget.ASDF.TabLayout.Indicator" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="tabIndicator">@null</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabPadding">0dp</item>
+        <item name="tabPaddingStart">5dp</item>
+        <item name="tabPaddingEnd">5dp</item>
+        <item name="tabBackground">@drawable/bg_dot_indicator</item>
+        <item name="android:background">@null</item>
+        <item name="tabMode">fixed</item>
+    </style>
+
+    <!-- 상단 게임 탭 스타일 -->
+    <style name="Widget.ASDF.TabLayout.Game" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="tabBackground">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="tabIndicatorHeight">1px</item>
+        <item name="tabIndicatorColor">@color/indicator_game_tab</item>
+        <item name="tabTextColor">@color/white20</item>
+        <item name="tabSelectedTextColor">@color/white90</item>
+        <item name="tabTextAppearance">@style/TextAppearance.ASDF.TabLayout.Game</item>
+    </style>
+
+    <style name="TextAppearance.ASDF.TabLayout.Game" parent="">
+        <item name="fontWeight">500</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:letterSpacing">-0.006</item>
+    </style>
+
+    <!-- 상단바 로고 스타일 -->
+    <style name="Widget.ASDF.ImageView.Logo" parent="">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:paddingTop">11dp</item>
+        <item name="android:paddingBottom">11dp</item>
+        <item name="android:src">@drawable/img_logo</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- BottomNavigationView 텍스트 스타일 -->
+    <style name="TextAppearance.ASDF.BottomNavigationView" parent="">
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+    <!-- BottomNavigationView 텍스트 스타일 -->
+
+    <!-- 슬라이드 다이얼로그-->
+    <style name="Theme.ASDF.Dialog.SlideDialog">
+        <item name="android:windowAnimationStyle">@style/Animation.ASDF.Dialog.SlideDialog</item>
+    </style>
+
+    <style name="Animation.ASDF.Dialog.SlideDialog" parent="">
+        <item name="android:windowEnterAnimation">@anim/slide_in_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+    <style name="Widget.ASDF.MaterialSwitch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:thumb">@drawable/switch_thumb</item>
+        <item name="thumbTint">@color/switch_thumb</item>
+        <item name="track">@drawable/switch_track</item>
+        <item name="trackTint">@color/switch_track</item>
+        <item name="trackDecoration">@null</item>
+    </style>
+</resources>
